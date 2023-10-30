@@ -1,0 +1,24 @@
+{
+  "name": "book_task",
+  "version": "1.0.0",
+  "description": "simple book task manager application where user can manage his book data",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon node index.js"
+  },
+  "author": "himmanshu soni",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.3",
+    "nodemon": "^3.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  }
+}

@@ -1,0 +1,199 @@
+swagger: "2.0"
+info:
+  title: Book-Management-Api
+  description: API documentation for Book-Management-Api
+  version: 3.0.0
+servers:
+  - url: 'http://localhost:3000/'
+    description: Development server
+
+securityDefinitions:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: x-access-token
+
+paths:
+#create user api
+  /book-api/register/user:
+    post:
+      summary: register user api
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: Book-Api
+        schema:
+          type: object
+          properties:
+            fname:
+              type: string
+            lname:
+              type: string
+            email:
+              type: string
+            password:
+              type: string
+                  
+      responses:
+        201:
+          description: User account created
+        400:
+          description: Please enter all fields
+        500:
+          description: Internal Server Error
+
+# user login api
+  /book-api/login:
+    post:
+      summary: user login api
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: log in data
+        schema:
+          type: object
+          properties:
+            email:
+                  type: string
+            password:
+                  type: string
+      responses:
+        200:
+          description: login Successfully   
+        403:
+          description: A token is required for authentication
+        500:
+          description: Internal Server Error
+  
+#create book api
+  /book-api/create-book:
+    post:
+      summary: create book api
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: enter book data
+        schema:
+          type: object
+          properties:
+            title:
+              type: string
+            author:
+              type: string
+            summary:
+              type: string        
+      responses:
+        201:
+          description: Book data created
+        400:
+          description: Title, author, and summary are required fields
+        500:
+          description: Internal Server Error
+      security:
+        - ApiKeyAuth: [] 
+
+#to get all books               
+  /book-api/get-books:
+    get:
+      summary: get all books    
+      description: get all books   
+      responses:
+        200:
+          description: Successfully fetched all books
+        400:
+          description: Book data not found
+        500:
+          description: Internal Server Error
+      security:
+        - ApiKeyAuth: [] 
+     
+
+# Get book By book_id
+  /book-api/get-book/by/{book_id}:
+    get:
+      summary: Get book by book_id
+      description: Get book by book_id
+      parameters:
+       - name: book_id
+         in: path
+         required: true
+      responses:
+        200:
+          description : Success
+        400:
+          description: Book data not found
+        500:
+          description: Internal Server Error
+      security:
+        - ApiKeyAuth: [] 
+
+
+#update book by book_id
+  /book-api/update-book/by/{book_id}:
+    put:
+      summary: update book by book_id
+      description:  update book by book_id
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+      - name: book_id
+        in: path
+        required: true
+      - in: body
+        name: Book-Api
+        schema:
+          type: object
+          properties:
+            title:
+              type: string
+            author:
+              type: string
+            summary:
+              type: string
+      responses:
+        200:
+          description: Book data updated successfully
+        400:
+          description: A book with this title already exists
+        500:
+          description: Internal server error
+      security:
+        - ApiKeyAuth: [] 
+      
+      
+
+
+#Delete book By book_Id
+  /book-api/delete-book/by/{book_id}:
+    delete:
+      summary: Delete book by book_id
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+       - name: book_id
+         in: path
+         required: true
+      responses:
+        200: 
+          description: book deleted
+        404:
+          description: No such book exists.
+        500:
+          description: Internal server error
+        security:
+        - ApiKeyAuth: [] 
+
+ 
