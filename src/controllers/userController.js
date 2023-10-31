@@ -40,8 +40,6 @@ exports.CreateUser = async (req, res) => {
 
 
 
-
-
 exports.userLogin = async (req, res) => {
     try {
         const requestBody = req.body;

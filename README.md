@@ -98,7 +98,7 @@ Before running the application, make sure you have the following software instal
 
 ```bash
 $ git clone <repository_url>
-$ cd book-management-api
+$ cd book-management-project
 $ npm install
 ```
 
@@ -166,12 +166,12 @@ Any errors that occur during the execution of API requests will be handled and r
 ```
 
 ### Assumptions 
-1. User can only have one role user at a time.
-2. All users are created as admin initially.
-3. users is only able to perform book operation  when they login with their email and password.
-4. i have make a user model for registration of user.
-5. if any title of book is used then user can not able to create book with same title.
-6. Book creation is done by logged in user.
+1. - User can only have one role user at a time.
+2. - All users are created as admin initially.
+3. - users is only able to perform book operation  when they login with their email and password.
+4. - i have make a user model for registration of user.
+5. - if any title of book is used then user can not able to create book with same title.
+6. - Book creation is done by logged in user.
 
 
 

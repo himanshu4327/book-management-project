@@ -4,7 +4,8 @@
   "description": "simple book task manager application where user can manage his book data",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon node index.js"
+    "start": "nodemon node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "himmanshu soni",
   "license": "ISC",
