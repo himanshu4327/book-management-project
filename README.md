@@ -165,13 +165,22 @@ The application establishes a database connection and performs a test query ever
 Any errors that occur during the execution of API requests will be handled and returned as JSON responses with appropriate error messages.
 ```
 
-### Assumptions 
-1. - User can only have one role user at a time.
-2. - All users are created as admin initially.
-3. - users is only able to perform book operation  when they login with their email and password.
-4. - i have make a user model for registration of user.
-5. - if any title of book is used then user can not able to create book with same title.
-6. - Book creation is done by logged in user.
+### Assumptions
 
+1. User Role Restriction:
+   - It is assumed that each user can have only one role at a time.
+   
+2. Initial Role Assignment:
+   - All users are initially created with the "admin" role.
+   
+3. User Authorization for Book Operations:
+   - Users are only able to perform book-related operations when they log in with their email and password.
 
+4. User Model for Registration:
+   - A user model is provided for user registration and authentication.
 
+5. Unique Book Titles:
+   - It is assumed that book titles must be unique. Users cannot create a book with the same title that already exists in the system.
+
+6. Book Creation:
+   - Book creation is restricted to logged-in users. Only authenticated users can create new books.
